@@ -1,29 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MD. AL-AMIN | QA Engineer Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap + AOS + FontAwesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Custom Styles + Dark Mode -->
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+      color: #111;
     }
+
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+      color: #fff !important;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      color: #ffc107;
+    }
+
+    .dark-mode .navbar {
+      background-color: #1f1f1f !important;
+    }
+
+    .dark-mode a {
+      color: #00bfff;
+    }
+
     .section-title {
       margin-top: 60px;
       font-weight: bold;
+      font-size: 28px;
+      border-bottom: 2px solid #dee2e6;
+      padding-bottom: 10px;
     }
-    .navbar-brand {
-      font-weight: bold;
+
+    .typewriter h4 {
+      overflow: hidden;
+      border-right: .15em solid orange;
+      white-space: nowrap;
+      margin: 0 auto;
+      animation: typing 3s steps(30, end), blink-caret .75s step-end infinite;
     }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: orange }
+    }
+
+    .card {
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
     .badge {
-      margin: 2px;
+      margin: 3px;
+    }
+
+    .btn-outline-dark, .btn-outline-secondary, .btn-outline-primary {
+      margin-top: 8px;
+    }
+
+    section { padding-top: 40px; padding-bottom: 40px; }
+
+    .dark-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    iframe {
+      border: 1px solid #ddd;
+      border-radius: 8px;
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Navbar -->
+  <!-- 🌙 Dark Mode Toggle -->
+  <button onClick="toggleDarkMode()" class="btn btn-sm btn-dark dark-toggle">
+    🌙 Toggle Dark Mode
+  </button>
+
+  <!-- Nav -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
       <a class="navbar-brand" href="#">MD. AL-AMIN</a>
@@ -35,125 +123,161 @@
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
           <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
+  <!-- Main -->
   <div class="container mt-5">
 
     <!-- About -->
-    <section id="about">
-      <div class="text-center">
-        <h1>MD. AL-AMIN</h1>
-        <h4 class="text-muted">QA Engineer | Automation Tester | Bug Hunter</h4>
-        <p>
-          📧 <a href="mailto:alamin.career.21@gmail.com">alamin.career.21@gmail.com</a>
-          | 📞 01770039416
-          | 🌐 <a href="https://github.com/AlAmin870" target="_blank">GitHub</a>
-          | 💼 <a href="https://www.linkedin.com/in/alaminmunna21/" target="_blank">LinkedIn</a>
-        </p>
-        <a href="resume-alamin.pdf" class="btn btn-outline-primary" target="_blank">📄 Download Resume</a>
-      </div>
-      <p class="mt-4">
-        I’m an experienced Quality Assurance Analyst with hands-on expertise in web, mobile, and API testing across enterprise projects. I’ve worked with clients like Japan Tobacco International, Coca-Cola, and Unilever. I specialize in manual and automation testing with tools like Selenium, Postman, PyTest, and data-driven strategies to ensure product quality at every level.
+    <section id="about" class="text-center typewriter" data-aos="fade-up">
+      <h1 class="fw-bold">MD. AL-AMIN</h1>
+      <h4>QA Engineer | Automation Tester | Bug Hunter 🐞</h4>
+      <p>
+        📧 <a href="mailto:alamin.career.21@gmail.com">alamin.career.21@gmail.com</a> |
+        📱 01770039416 |
+        🌐 <a href="https://github.com/AlAmin870" target="_blank">GitHub</a> |
+        💼 <a href="https://www.linkedin.com/in/alaminmunna21/" target="_blank">LinkedIn</a>
+      </p>
+      <a href="resume-alamin.pdf" class="btn btn-outline-primary" target="_blank">📄 Download Resume</a>
+      <p class="mt-3">
+        I'm a passionate QA Engineer with hands-on experience in API, Web, and Mobile testing.
+        I’ve tested systems for global brands like Japan Tobacco, Coca-Cola, and Unilever.
+        Skilled in automation tools, bug reporting, and structured test case execution.
       </p>
     </section>
 
     <!-- Skills -->
-    <section id="skills">
-      <h2 class="section-title">🛠 Technical Skills</h2>
-      <div class="row">
+    <section id="skills" data-aos="fade-up">
+      <h2 class="section-title text-center">🛠 Technical Skills</h2>
+      <div class="row text-center">
         <div class="col-md-4">
-          <h6>Automation & Web Testing</h6>
+          <h6>Automation</h6>
           <span class="badge bg-secondary">Selenium</span>
           <span class="badge bg-secondary">Postman</span>
           <span class="badge bg-secondary">PyTest</span>
           <span class="badge bg-secondary">Cypress</span>
         </div>
         <div class="col-md-4">
-          <h6>Programming / Scripting</h6>
+          <h6>Programming</h6>
           <span class="badge bg-info">Python</span>
           <span class="badge bg-info">JavaScript</span>
           <span class="badge bg-info">MySQL</span>
           <span class="badge bg-info">HTML/CSS</span>
         </div>
         <div class="col-md-4">
-          <h6>Tools and Methodologies</h6>
+          <h6>Tools & Process</h6>
           <span class="badge bg-success">JIRA</span>
-          <span class="badge bg-success">Trello</span>
           <span class="badge bg-success">TestRail</span>
+          <span class="badge bg-success">Git</span>
           <span class="badge bg-success">Agile</span>
         </div>
       </div>
     </section>
 
     <!-- Projects -->
-    <section id="projects">
-      <h2 class="section-title">📁 Projects</h2>
+    <section id="projects" data-aos="fade-up">
+      <h2 class="section-title text-center">🚀 Projects</h2>
 
       <div class="card mb-3">
         <div class="card-body">
-          <h5 class="card-title">🔧 API Testing Automation Framework</h5>
-          <p class="card-text">
-            Built an API test suite for CRUD operations using PyTest and Requests with logging and reporting integrated.
-          </p>
-          <a href="https://github.com/AlAmin870/qa-automation-project-2" class="btn btn-sm btn-outline-dark" target="_blank">GitHub Repo</a>
+          <h5 class="card-title">🔧 API Test Automation Framework</h5>
+          <p>Built a PyTest-based API testing suite to validate CRUD operations with logging and reporting.</p>
+          <a href="https://github.com/AlAmin870/qa-automation-project-2" target="_blank" class="btn btn-sm btn-outline-dark">GitHub Repo</a>
         </div>
       </div>
 
       <div class="card mb-3">
         <div class="card-body">
           <h5 class="card-title">📊 Health & Nutrition Tracker</h5>
-          <p class="card-text">
-            Built a Streamlit-based web app using Python + PostgreSQL to track daily nutrition and visualize data interactively.
-          </p>
-          <a href="https://github.com/AlAmin870/Health-Nutrition-Tracker-with-Personalized-Insights" class="btn btn-sm btn-outline-dark" target="_blank">GitHub Repo</a>
+          <p>Streamlit + PostgreSQL dashboard for daily dietary analysis with visual reports and login auth.</p>
+          <a href="https://github.com/AlAmin870/Health-Nutrition-Tracker-with-Personalized-Insights" target="_blank" class="btn btn-sm btn-outline-dark">GitHub Repo</a>
         </div>
       </div>
 
       <div class="card mb-3">
         <div class="card-body">
-          <h5 class="card-title">📋 Manual Testing – DemoQA</h5>
-          <p class="card-text">
-            Conducted manual testing on DemoQA, documented test cases, found bugs, provided bug reports with screenshots and PDF documentation.
-          </p>
-          <a href="https://github.com/AlAmin870/qa-manual-testing-demoqa" class="btn btn-sm btn-outline-dark" target="_blank">View Report</a>
+          <h5 class="card-title">🧪 Manual Testing Report – DemoQA</h5>
+          <p>Executed test cases for DemoQA UI components. Filed bug logs and created structured PDF reports.</p>
+          <a href="https://github.com/AlAmin870/qa-manual-testing-demoqa" target="_blank" class="btn btn-sm btn-outline-secondary">View Repo</a>
         </div>
       </div>
+    </section>
 
+    <!-- Blog / Case Study Section -->
+    <section id="blog" data-aos="fade-up">
+      <h2 class="section-title text-center">📚 Blog / Case Studies</h2>
+
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Testing REST APIs with PyTest</h5>
+          <p>Wrote parameterized test cases with PyTest to validate token auth, CRUD operations, and fail logs. Saved results in logs per test cases with assertions.</p>
+          <a href="https://github.com/AlAmin870/api-testing-case-study" class="btn btn-sm btn-outline-dark" target="_blank">Case Study</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PDF Test Report Viewer -->
+    <section id="pdf-viewer" data-aos="fade-up">
+      <h2 class="section-title text-center">📄 PDF: Manual Test Report</h2>
+      <p class="text-center">Here's my latest test case report sample embedded from PDF:</p>
+      <div class="text-center">
+        <iframe src="demoqa-report.pdf" width="100%" height="500px"></iframe>
+      </div>
     </section>
 
     <!-- Experience -->
-    <section id="experience">
-      <h2 class="section-title">💼 Professional Experience</h2>
+    <section id="experience" data-aos="fade-up">
+      <h2 class="section-title text-center">💼 Experience</h2>
 
-      <p><strong>Quality Assurance Analyst</strong> – Computer Ease Ltd <br><small>March 2025 – Present | Dhaka</small></p>
+      <p><strong>Quality Assurance Analyst</strong> – Computer Ease Ltd (2025–Present)</p>
       <ul>
-        <li>Lead QA for global DMS testing (Japan Tobacco, Coca-Cola, Unilever)</li>
-        <li>API & Web Automation using PyTest, SQL, Postman</li>
-        <li>Tested mobile dashboard apps for real-time data</li>
+        <li>Automation and manual testing for enterprise platforms (Coca-Cola, JTI)</li>
+        <li>Built PyTest suites, participated in sprint rituals, and logged 100+ issues</li>
       </ul>
 
-      <p><strong>QA Trainee</strong> – IT Training BD <br><small>2024 | Dhaka</small></p>
+      <p><strong>QA Trainee</strong> – IT Training BD (2024)</p>
       <ul>
-        <li>Gained foundational experience in software QA testing strategies</li>
-        <li>Wrote manual test cases, created bug reports, and executed test plans</li>
+        <li>Learned QA best practices, ran manual test cases, created summary reports</li>
       </ul>
     </section>
 
+    <!-- Certifications & Badges -->
+    <section id="certifications" data-aos="fade-up">
+      <h2 class="section-title text-center">🎖️ Certifications</h2>
+      <div class="text-center mb-4">
+        <img src="https://img.shields.io/badge/Postman-API%20Testing-orange?style=for-the-badge&logo=postman" />
+        <img src="https://img.shields.io/badge/PyTest-Automation-green?style=for-the-badge&logo=python" />
+        <img src="https://img.shields.io/badge/Selenium-UI%20Testing-blue?style=for-the-badge&logo=selenium" />
+      </div>
+      <p class="text-center">These badges represent tools & frameworks I’ve earned certifications for.</p>
+    </section>
+
     <!-- Contact -->
-    <section id="contact">
-      <h2 class="section-title">📞 Contact</h2>
+    <section id="contact" data-aos="fade-up">
+      <h2 class="section-title text-center">📞 Contact</h2>
       <p><strong>Email:</strong> <a href="mailto:alamin.career.21@gmail.com">alamin.career.21@gmail.com</a></p>
       <p><strong>Phone:</strong> 01770039416</p>
       <p><strong>GitHub:</strong> <a href="https://github.com/AlAmin870" target="_blank">github.com/AlAmin870</a></p>
       <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alaminmunna21/" target="_blank">linkedin.com/in/alaminmunna21</a></p>
     </section>
+
   </div>
 
+  <!-- JS Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
 </body>
 </html>
